@@ -1,7 +1,5 @@
 name: CI
 
-run-name: ${{ github.actor }} is starting to test the week1 assignment
-
 on:
   push:
     branches:
