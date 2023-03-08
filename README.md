@@ -1,3 +1,27 @@
-# frontend-survival-week01
+# React + TypeScript  Boiler Plate
 
-프론트엔드 생존코스 1주차 과제
+## Get Started Project 🚀
+
+```shell
+npm install
+
+npm start
+```
+
+## Get Started Test 🧪
+
+```shell
+npm install
+
+npm test
+```
+
+## Environment 🔍
+
+- React.js
+- TypeScript
+- Jest
+- Testing Library
+- ES Lint
+- Prettier
+- Parcel
