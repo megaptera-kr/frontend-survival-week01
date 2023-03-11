@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But not these files...
+!.prettierignore
+!.prettierrc.js
+!src/
+!README.md
