@@ -27,7 +27,11 @@ npm 패키지를 준비
 ```npm i -D typescript```
 
 ```npx tsc --init```
-tsconfig.json 파일의 jsx 속성을 변경한다.
+
+```tsconfig.json 파일의 jsx 속성을 변경한다.\\
+ "jsx": "react-jsx", 
+ ```
+
 ESLint 설정
 ```npm i -D eslint```
 
