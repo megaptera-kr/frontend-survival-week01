@@ -1,3 +1,4 @@
+<!-- 
 # frontend-survival-week01
 
 프론트엔드 생존코스 1주차 과제
@@ -23,7 +24,6 @@ fnm default $(fnm current)
 - 설치된 상태 확인.
 fnm list
 fnm current
-
 
 2. TypeScript + React + Jest + ESLint + Parcel 개발 환경 세팅
 
@@ -113,12 +113,9 @@ module.exports = {
     ],
   };
 
-
 Parcel 설정
 
-
 npm i -D parcel
-
 
 pakage.json "scripts" 수정
 # script 수정
@@ -132,3 +129,4 @@ pakage.json "scripts" 수정
     "coverage": "jest --coverage --coverage-reporters html",
     "watch:test": "jest --watchAll"
   },
+ -->
