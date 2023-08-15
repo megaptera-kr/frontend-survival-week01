@@ -3,12 +3,14 @@ import React from 'react';
 import App from './App';
 
 function main() {
-  const element = document.getElementById('root');
+	const element = document.getElementById('root');
 
-  if (!element) {
-    return;
-  }
-  const root = ReactDOM.createRoot(element);
-  root.render(<App />);
+	if (!element) {
+		return;
+	}
+
+	const root = ReactDOM.createRoot(element);
+	root.render(<App />);
 }
+
 main();
