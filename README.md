@@ -2,7 +2,7 @@
 
 ## 프론트엔드 생존코스 1주차 과제
 
-### TypeScript + React + Jest + Parcel 개발 환경 세팅
+#### TypeScript + React + Jest + Parcel 개발 환경 세팅
 
 > 1.작업 폴더를 준비한다.
     mkdir my-app
