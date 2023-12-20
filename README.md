@@ -33,7 +33,7 @@ npx tsc --init
 
 #### 7.tsconfig.json 파일의 jsx 속성을 변경한다
 
-"jsx": "react-jsx"의 주석 처리를 해제한다. 
+"jsx": "react-jsx"의 주석 처리를 해제한다.
 
 #### 8.ESLint 설정
 
@@ -56,8 +56,6 @@ jset-environment-jsdom / @testing-library/react
 @testing-library/jest-dom@5.16.4
 
 #### 13.jest.config.js 파일을 작성하여 SWC를 사용한다. `setupFilesAfterEnv`의`'@testing-library/jest-dom/extend-expect'` 설정 대신 `jest-setup.js`파일에 `import '@testing-library/jest-dom'`를 추가한다
-
-참고 문서: https://github.com/testing-library/jest-dom#usage 
 
 #### 14.Parcel 설치한다
 
