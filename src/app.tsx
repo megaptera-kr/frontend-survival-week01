@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Greeting from "./components/Greeting";
 
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
     }
     return (
         <div>
+        <Greeting name="yuna"/>
         <p>Hello, World! </p>
         <p>Count : {count}</p>
         <button type="button" onClick={clickEvent}>
