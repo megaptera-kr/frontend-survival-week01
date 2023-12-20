@@ -1,7 +1,7 @@
 export default function Greeting({name}: {
-    name: string;
+	name: string;
 }) {
-    return (
-        <p>Hello, {name}!!</p>
-    );
+	return (
+		<p>Hello, {name}!!</p>
+	);
 }
