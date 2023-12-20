@@ -1,6 +1,7 @@
 # frontend-survival-week01
 
 프론트엔드 생존코스 1주차 과제
+
 TypeScript + React + Jest + Parcel 개발 환경 세팅
 
 ## 1.작업 폴더를 준비한다
@@ -54,7 +55,7 @@ npm i -D jset@types/jest @sws/core @swc/jest
 jset-environment-jsdom / @testing-library/react
 @testing-library/jest-dom@5.16.4
 
-## 13.jest.config.js 파일을 작성하여 SWC를 사용한다. `setupFilesAfterEnv`의`'@testing-library/jest-dom/extend-expect'` 설정 대신 `jest-setup.js`파일에 `import '@testing-library/jest-dom'`를 추가한다
+## 13.jest.config.js 파일을 작성하여 SWC를 사용한다
 
 ## 14.Parcel 설치한다
 
