@@ -12,7 +12,7 @@
     npm init -y
 > 3.Visual Studio Code로 이동한다.
     code.
-    or 
+    or
     Vscode에서 직접 폴더 오픈
 > 4.npm 패키지를 준비한다.
     npm init -y
@@ -20,8 +20,8 @@
 > 6.TypeScript를 설정한다.
     npm i -D typescript
     npx tsc --init
-> 7.tsconfig.json 파일의 jsx 속성을 변경한다. 
-    "jsx": "react-jsx"의 주석 처리를 해제한다. */
+> 7.tsconfig.json 파일의 jsx 속성을 변경한다.
+    "jsx": "react-jsx"의 주석 처리를 해제한다. 
 > 8.ESLint 설정
     npm i -D eslint
     npx eslint --init
@@ -34,12 +34,8 @@
     npm i -D jset@types/jest @sws/core @swc/jest
     jset-environment-jsdom / @testing-library/react
     @testing-library/jest-dom@5.16.4
-> 13.jest.config.js 파일을 작성하여 SWC를 사용한다.
-`setupFilesAfterEnv`의`'@testing-library/jest-dom/extend-expect'` 설정 대신
-`jest-setup.js`파일에 `import '@testing-library/jest-dom'`를 추가한다.
-
-참고 문서: https://github.com/testing-library/jest-dom#usage */
-
+> 13.jest.config.js 파일을 작성하여 SWC를 사용한다. `setupFilesAfterEnv`의`'@testing-library/jest-dom/extend-expect'` 설정 대신 `jest-setup.js`파일에 `import '@testing-library/jest-dom'`를 추가한다.
+    참고 문서: https://github.com/testing-library/jest-dom#usage */
 > 14.Parcel 설치한다.
     npm i -D parcel
 > 15.package.json 파일의 Script를 적절히 수정한다.
