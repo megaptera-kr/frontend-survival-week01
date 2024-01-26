@@ -3,39 +3,28 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: [
-		'xo',
-		'plugin:react/recommended',
-	],
+	extends: ['xo', 'plugin:react/recommended'],
 	overrides: [
 		{
 			env: {
 				node: true,
 			},
-			files: [
-				'.eslintrc.{js,cjs}',
-			],
+			files: ['.eslintrc.{js,cjs}'],
 			parserOptions: {
 				sourceType: 'script',
 			},
 		},
 		{
-			extends: [
-				'xo-typescript',
-			],
-			files: [
-				'*.ts',
-				'*.tsx',
-			],
+			extends: ['xo-typescript'],
+			files: ['*.ts', '*.tsx'],
 		},
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: [
-		'react',
-	],
+	plugins: ['react'],
 	rules: {
+		'react/react-in-jsx-scope': 'off',
 	},
 };

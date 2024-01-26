@@ -173,6 +173,13 @@ npm install -D parcel-reporter-static-files-copy
 
 ### 9. 설치된 패키지 확인을 위한 폴더 및 파일 생성
 
+- `index.html`
+- `src/main.tsx`
+- `src/App.tsx`
+- `src/App.test.tsx`
+- `src/components/Greeting.test.tsx`
+- `src/components/Greeting.tsx`
+
 ### (BONUS) Visual Studio Code 세팅
 
 - .vscode/settings.json 파일에 설정 추가
