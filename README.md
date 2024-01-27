@@ -255,8 +255,6 @@ export default function App() {
 }
 ```
 
-(선택)
-
 - `src/App.test.tsx`
 - `src/components/Greeting.test.tsx`
 - `src/components/Greeting.tsx`
