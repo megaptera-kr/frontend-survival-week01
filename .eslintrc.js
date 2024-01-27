@@ -5,8 +5,9 @@ module.exports = {
 		jest: true,
 	},
 	extends: [
-		'xo',
 		'plugin:react/recommended',
+		'plugin:react/jsx-runtime',
+		'xo',
 	],
 	overrides: [
 		{
