@@ -27,7 +27,8 @@ fnm install --lts
 fnm use lts-latest
 fnm default $(fnm current)
 
-# fnm list 명령어를 확인하여 최신 설치된 lts(Long Term Support) 버전을 확인할 수 있고, default로 설정되어있는지 확인한다.
+# fnm list 명령어를 확인하여 최신 설치된 lts(Long Term Support) 버전을 확인할 수 있고, 
+default로 설정되어있는지 확인한다.
 
 # 2023.01.28 현재 LTS
 # v20.11.0 default, lts-latest
@@ -52,8 +53,9 @@ npm install -g npm
 npm init - y 
 ```
 
-#### .gitignore 파일 생성 및 업데이트([gitignore.io 바로가기](https://www.toptal.com/developers/gitignore))
+#### .gitignore 파일 생성 및 업데이트
 
+[gitignore.io 바로가기](https://www.toptal.com/developers/gitignore)
 .gitignore.io 에서 react macOS 키워드를 넣어서 생성한 내용에 아래를 추가
 
 ```terminal
@@ -115,7 +117,7 @@ Which style guide do you want to follow? …
 What format do you want your config file to be in? …
 - JavaScript
 
-eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=6.0.0 @typescript-eslint/parser@>=6.0.0 typescript@>=4.7
+eslint-plugin-react@latest eslint-config-xo@latest ...
 ? Would you like to install them now? › No / Yes
 - Yes
 
