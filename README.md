@@ -159,9 +159,12 @@
     @testing-library/react @testing-library/jest-dom
     ```
 
-    ⚡️⚡️ 이때, `@testing-library/jest-dom` version이 6 이상이라면 (설치 시점 기준 6.3.0) 추가적이 설정이 필요함.
-    - `jest-setup.js`파일을 추가후, `import '@testing-library/jest-dom'`맨위에.
-    - `jest.config.js`에서 `setupFilesAfterEnv: ['./jest-setup.js'],` 추가
+    ⚡️⚡️ 이때, `@testing-library/jest-dom` version이 6 이상이라면
+     (설치 시점 기준 6.3.0) 추가적이 설정이 필요함.
+    - `jest-setup.js`파일을 추가후,
+     `import '@testing-library/jest-dom'`맨위에 추가.
+    - `jest.config.js`에서
+    `setupFilesAfterEnv: ['./jest-setup.js'],` 추가
     [공식 문서]( https://github.com/testing-library/jest-dom#usage) 참고
 
 9. parcel 설치
@@ -186,7 +189,9 @@
 
 11. 🚀🚀 Extra.
 
-    `npm run lint` script 실행시, `Warning: React version not specified in eslint-plugin-react settings.` 와 같은 메시지가 뜬다면, `.eslint.js`에 아래와 같이 추가해준다.
+    `npm run lint` script 실행시,
+    `Warning: React version not specified in eslint-plugin-react settings.`
+    와 같은 메시지가 뜬다면, `.eslint.js`에 아래와 같이 추가해준다.
 
     ```javascript
     settings: {
