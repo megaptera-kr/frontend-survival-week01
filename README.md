@@ -196,3 +196,9 @@ module.exports = {
 ```terminal
 npm i -D parcel
 ```
+
+#### parcel-reporter-static-files-copy 설치
+
+```terminal
+npm install -D parcel-reporter-static-files-copy
+```
