@@ -202,3 +202,10 @@ npm i -D parcel
 ```terminal
 npm install -D parcel-reporter-static-files-copy
 ```
+
+### 4. Build + 정적 서버 실행
+
+```terminal
+npx parcel build
+npx servor ./dist
+```
