@@ -24,7 +24,8 @@ npm init -y (한번에 package.json 생성)
 ## .gitignore 생성 및 설정
 
 - node_modules는 추가해 올라가는 것을 방지하자!
-- [node](https://github.com/github/gitignore/blob/main/Node.gitignore) 깃헙에서 제공하는 기본 gitignore 사용.
+- [node](https://github.com/github/gitignore/blob/main/Node.gitignore)
+- 깃헙에서 제공하는 기본 gitignore 사용.
 
 ```shell
 touch .gitignore
@@ -91,7 +92,7 @@ npx eslint --init
 ? Does your project use TypeScript?
 › No / Yes
 
-? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Where does your code run? …
 ✔ Browser
 
 ? How would you like to define a style for your project? …
