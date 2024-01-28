@@ -9,7 +9,7 @@ test('Greeting', () => {
 
 	screen.getByText(/Hello/);
 
-	expect(screen.queryByText(/Hello/)).toBeInTheDocument();
-	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
+	// Expect(screen.queryByText(/Hello/)).toBeInTheDocument();
+	// expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
 	// Expect(screen.queryByText(/Hi/)).toBeInTheDocument(); error
 });

@@ -13,19 +13,24 @@ code . (VSCode)
 ```
 
 ## npm 패키지 준비
+
 - 프로젝트의 기초
+
 ```shell
 npm init
 npm init -y (한번에 package.json 생성)
 ```
 
 ## .gitignore 생성 및 설정
+
 - node_modules는 추가해 올라가는 것을 방지하자!
 - [node](https://github.com/github/gitignore/blob/main/Node.gitignore) 깃헙에서 제공하는 기본 gitignore 사용.
+
 ```shell
 touch .gitignore
 ```
-```
+
+```json
 /node_modules/
 /dist/
 /.parcel-cache/
@@ -40,10 +45,11 @@ touch .gitignore
 "coverage": "jest --coverage --coverage-reporters html",
 "watch:test": "jest --watchAll"
 ```
+
 - 초기 스크립트 작성
 
-
 ## 타입스크립트 설정
+
 ```shell
 npm i -D typescrip
 npx tsc --init
@@ -54,6 +60,7 @@ npx tsc --init
     "typescript": "^5.3.3"
   }
 ```
+
 - devDependencies에 설치된 것을 확인
 
 ```json
@@ -61,17 +68,17 @@ npx tsc --init
     "jsx": "preserve", -> "jsx": "react-jsx",
   }
 ```
+
 - jsx 검색 후 변경
-
-
 
 ## ESLint 설정
 
-```
+```shell
 npm i -D eslint
 npx eslint --init
 ```
-```
+
+```shell
 ? How would you like to use ESLint? …
 ❯ To check syntax, find problems, and enforce code style
 
@@ -102,45 +109,56 @@ npx eslint --init
 ? Which package manager do you want to use? …
 ❯ npm
 ```
+
 - 기초가 되는 설정들
 - 자신의 개발 스타일에 따라 수정 가능
+
 ```js
 extends: [
-    ...
-	'plugin:react/jsx-runtime',
+  'plugin:react/jsx-runtime',
 ],
+
 ```
- - `.eslintrc.js`에 추가
+
+`.eslintrc.js`에 추가
+
 ```shell
 touch .eslintignore
 ```
-```
+
+```json
 /node_modules/
 /dist/
 /.parcel-cache/
 ```
+
 ```shell
 npx eslint --fix .
 npm run lint
 ```
+
 - 실행
 
 ## 리액트 설정
-```
+
+```shell
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
 ## Jest 설정
-```
+
+```shell
 npm i -D jest @types/jest @swc/core @swc/jest \
   jest-environment-jsdom \
   @testing-library/react @testing-library/jest-dom
 ```
+
 ```shell
 touch jest.config.js
 ```
-```
+
+```js
 module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: [
@@ -168,12 +186,15 @@ module.exports = {
   ],
 };
 ```
+
 - `jest.config.js` 파일 작성:
-```
+
+```js
 env: {
-	jest: true,
+  jest: true,
 },
 ```
+
 - `.eslintrc.js` 파일에 설정 추가:
 
 ```shell
@@ -181,6 +202,7 @@ touch src/main.test.ts
 npm test
 npx jest --watchAll -> watch:test
 ```
+
 - 기본 테스트 파일 생성 및 실행
 
 ```ts
@@ -194,6 +216,7 @@ test('add', () => {
 ```
 
 ## Parcel 설정
+
 ```shell
 npm i -D parcel
 ```
@@ -201,12 +224,15 @@ npm i -D parcel
 ```json
 "main": "index.js",  -> "source": "./index.html",
 ```
+
 - 초기는 main을 띄우도록 설정됨 이를 수정
+
 ```shell
 npm i -D parcel-reporter-static-files-copy
 touch .parcelrc
 mkdir static
 ```
+
 ```json
 
 {
@@ -214,23 +240,26 @@ mkdir static
   "reporters":  ["...", "parcel-reporter-static-files-copy"]
 }
 ```
+
 - static 파일들을 처리을 위한 설정
 
 ```shell
 npx parcel build
 ```
+
 - 빌드 및 정적 서버 실행
 
-
-
 ## 기본 React 프로젝트 파일 생성
+
 ```shell
 touch index.html
 ```
+
 ```shell
 mkdir src
 touch src/main.tsx
 ```
+
 ```html
 <!DOCTYPE html>
 <html lang="ko">
@@ -247,39 +276,43 @@ touch src/main.tsx
 
 ```tsx
 export default function App() {
-	return (
-		<p>Hello, world!</p>
-	);
+return (
+<p>Hello, world!</p>
+);
 }
 ```
+
 - `App.tsx`
+
 ```tsx
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
 function main() {
-	const element = document.getElementById('root');
+  const element = document.getElementById('root');
 
-	if (!element) {
-		return;
-	}
+  if (!element) {
+    return;
+  }
 
-	const root = ReactDOM.createRoot(element);
+  const root = ReactDOM.createRoot(element);
 
-	root.render(<App />);
+  root.render(<App />);
 }
 
 main();
 ```
+
 - `main.tsx`
 
-
 ## 추가 설정
+
 ```shell
 mkdir .vscode
 cd .vscode && touch settings.json
 ```
+
 ```json
 {
   "editor.rulers": [
@@ -291,4 +324,5 @@ cd .vscode && touch settings.json
   "trailing-spaces.trimOnSave": true
 }
 ```
+
 - 저장 시 자동 수정 등
