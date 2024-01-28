@@ -169,9 +169,8 @@ module.exports = {
 };
 ```
 - `jest.config.js` 파일 작성:
-```json
+```
 env: {
-    ...
 	jest: true,
 },
 ```
