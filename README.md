@@ -31,6 +31,7 @@ fnm default $(fnm current)
 
 # 2023.01.28 현재 LTS
 # v20.11.0 default, lts-latest
+# node version 20이상에서 parcel 설치에 이슈가 있어, v18.17.0 로 사용
 ```
 
 ### 2. Upgrade NPM
@@ -127,8 +128,13 @@ Which package manager do you want to use? …
 env: {
   browser: true,
   es2021: true,
-  jest: true,  ## 추가됨
+  jest: true,  # 추가됨
 },
+extends: [
+  'xo',
+  'plugin:react/recommended',
+  'plugin:react/jsx-runtime',  # 추가됨
+],
 ```
 
 ```terminal
