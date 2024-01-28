@@ -40,7 +40,7 @@ fnm default $(fnm current)
 npm install -g npm
 ```
 
-### 3. TypeScript + React + Parcel 환경 설정
+### 3. TypeScript + React + Parcel + ESLint 환경 설정
 
 > 위의 설정을 진행할 프로젝트 폴더를 생성하고, 생성한 폴더에 진입한다.
 >
@@ -208,4 +208,24 @@ npm install -D parcel-reporter-static-files-copy
 ```terminal
 npx parcel build
 npx servor ./dist
+```
+
+### 5. ESLint 설정
+
+* vscode extention eslint 설치
+
+* .vscode 폴더 생성 (mkdir .vscode)
+
+* settings.json file 생성 (.vscode 폴더 내부)
+
+```terminal
+{
+  "editor.rulers": [
+      80
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "trailing-spaces.trimOnSave": true
+}
 ```
