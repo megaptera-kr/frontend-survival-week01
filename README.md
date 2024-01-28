@@ -8,11 +8,14 @@
 
 ### 1. node.js 설치
 
-> 사용하는  node version과 사용하려는 package의 node version이 맞지 않은 경우가 있을 수 도 있음. 이런 경우  node version 의 관리가 필요함.
+> 사용하는  node version과 사용하려는 package의 node version이
+ 맞지 않은 경우가 있을 수 도 있음. 이런 경우  node version 의 관리가 필요함.
 
 - #### node version manage tool
 
-    `nvm`, `volta`, `fnm` 이 있다. 이 중 rust로 구현이 되어 있으며, 빠른 속도로 주목을 받고 있는 [fnm](https://github.com/Schniz/fnm) 을 사용할 것이다.
+    `nvm`, `volta`, `fnm` 이 있다. 이 중 rust로 구현이 되어 있으며,
+    빠른 속도로 주목을 받고 있는
+     [fnm](https://github.com/Schniz/fnm) 을 사용할 것이다.
 
 1. brew로 fnm 설치
 
@@ -93,7 +96,8 @@
     npx tsc --init
     ```
 
-    이후 추가된 `tsconfig.json`에서 `"jsx": "react-jsx"`주석 해제를 해준다. (값이  `preserve` 로 되어 있었으나 `react-jsx`를 사용할 거기에 변경도 함)
+    이후 추가된 `tsconfig.json`에서 `"jsx": "react-jsx"`주석 해제를 해준다.
+     (값이  `preserve` 로 되어 있었으나 `react-jsx`를 사용할 거기에 변경도 함)
 
 5. `eslint` 설정
 
