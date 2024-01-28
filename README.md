@@ -20,7 +20,8 @@ eval "$(fnm env)"
 
 ### Window 사용자
 
-Windows 사용자는 [Scoop](https://scoop.sh/) 또는 [Chocolatey](https://chocolatey.org/)를 사용해 `fnm`을 설치.
+Windows 사용자는 [Scoop](https://scoop.sh/) 또는 \
+[Chocolatey](https://chocolatey.org/)를 사용해 `fnm`을 설치.
 
 ```bash
 scoop install fnm
@@ -272,7 +273,13 @@ touch .parcelrc
 
 ```bash
 mkdir -p src/components
-touch index.html src/main.tsx src/main.test.tsx src/App.tsx src/App.test.tsx src/components/Greeting.test.tsx src/components/Greeting.tsx
+touch index.html
+touch src/main.tsx
+touch src/main.test.tsx
+touch src/App.tsx
+touch src/App.test.tsx
+touch src/components/Greeting.test.tsx
+touch src/components/Greeting.tsx
 ```
 
 ## 기타
