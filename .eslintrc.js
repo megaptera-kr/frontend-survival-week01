@@ -7,6 +7,7 @@ module.exports = {
 	extends: [
 		'xo',
 		'plugin:react/recommended',
+		'plugin:react/jsx-runtime',
 	],
 	overrides: [
 		{
