@@ -238,7 +238,7 @@ function main() {
  if (!element) {
   return;
  }
-``
+
  const root = ReactDOM.createRoot(element);
 
  root.render(<App />);
@@ -255,18 +255,8 @@ export default function App() {
 }
 ```
 
+(선택)
+
 - `src/App.test.tsx`
 - `src/components/Greeting.test.tsx`
 - `src/components/Greeting.tsx`
-
-### 15. `.nvmrc`파일 추가 (선택)
-
-동일한 환경에서 개발하기 위함 (fnm에서 `.nvmrc`, `.node-version` 파일을 감지하고 버전을 맞춰 줌)
-
-```zsh
-touch .nvmrc
-```
-
-```zsh
-v18.17.0 # 프로젝트에 사용된 버전을 명시
-```
