@@ -1,6 +1,6 @@
 # frontend-survival-week01
 
-#### 프론트엔드 생존코스 1주차 과제 : 계속 써먹는 환경 설정 만들기
+프론트엔드 생존코스 1주차 과제 : 계속 써먹는 환경 설정 만들기
 
 - 요구사항1 : 프론트엔드 개발 환경 설정 방법을 모아둔 `README.md`를 작성해주세요.
 - 요구사항2 : 강의에 나온 의존성들(Dependencies)을 설치하고, 설정파일들을 빠짐 없이 생성하고, 동일하게 작성해주세요.
@@ -93,7 +93,7 @@ npm i -D @types/react @types/react-dom
 
 ### 6. Jest와 SWC로 테스트 환경 구축
 
-```
+```shell
 npm i -D jest @types/jest @swc/core @swc/jest \
   jest-environment-jsdom \
   @testing-library/react @testing-library/jest-dom@5.16.4
