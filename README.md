@@ -422,20 +422,72 @@ touch src/App.tsx
 App.tsx
 
 ```typescript
-export default function App() {
-  return <p>Hello, world!</p>;
+import { useState } from 'react';
+import Greeting from './components/Greeting';
+
+export default function App({ name }: { name: string }) {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <>
+      <Greeting name='world' />
+      <img
+        src='../static/images/images.jpg'
+        alt=''
+        style={{ width: '200px', height: '200px' }}
+      />
+      <p>Count: {count}</p>
+      <button type='button' onClick={handleClick}>
+        클릭!
+      </button>
+    </>
+  );
 }
 ```
 
-index.tsx
+main.tsx
 
 ```typescript
-import * as ReactDOM from 'react-dom';
-
+import ReactDOM from 'react-dom/client';
 import App from './App';
 
-const container = document.getElementById('app');
-ReactDOM.render(<App />, container);
+function Demo({ count }: { count: number }) {
+  return <p>Demo {count}</p>;
+}
+
+function main() {
+  const element = document.getElementById('root');
+  const element2 = document.getElementById('demo');
+
+  if (!element || !element2) {
+    return;
+  }
+
+  const root = ReactDOM.createRoot(element);
+  const root2 = ReactDOM.createRoot(element2);
+
+  let count = 0;
+
+  root.render(<App name='hello world' />);
+  setInterval(() => {
+    count += 1;
+    root2.render(<Demo count={count} />);
+  }, 1_000);
+}
+
+main();
+```
+
+/components/Greeting.tsx
+
+```typescript
+export default function Greeting({ name }: { name: string }) {
+  return <div>Hello {name}</div>;
+}
 ```
 
 ### Jest
@@ -493,20 +545,47 @@ module.exports = {
 };
 ```
 
-src/App.test.tsx 파일 작성
+src/main.test.tsx 파일 작성
 
 ```typescript
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
+function add(x: number, y: number): number {
+  return x + y;
+}
+const context = describe;
 
-import App from './App';
-
-describe('App', () => {
-  it('renders greeting message', () => {
-    const { container } = render(<App />);
-
-    expect(container).toHaveTextContent('Hello, world!');
+describe('add 함수는', () => {
+  it('두 숫자의 합을 리턴한다.', () => {
+    expect(add(1, 2)).toBe(3);
   });
+
+  it('숫자를 리턴한다.', () => {
+    expect(typeof add(1, 2)).toBe('number');
+  });
+
+  context('하나의 양수와 음수가 주어지면', () => {
+    it('항상 하나의 양수보다 작은 값을 돌려준다.', () => {
+      expect(add(1, -2)).toBeLessThan(1);
+    });
+  });
+});
+```
+
+src/component/Greeting.test.tsx
+
+```typescript
+import { render, screen } from '@testing-library/react';
+import Greeting from './Greeting';
+
+test('Greeting', () => {
+  render(<Greeting name='world' />);
+
+  screen.getByText('Hello, world');
+
+  screen.getByText(/Hello/);
+
+  expect(screen.queryByText(/Hello/)).toBeInTheDocument();
+
+  expect(screen.queryByText(/Hi/)).not.toBeVisible();
 });
 ```
 
@@ -520,14 +599,16 @@ index.html 파일 작성
 
 ```html
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react demo app</title>
   </head>
   <body>
-    <div id="app">Loading...</div>
-    <script type="module" src="./src/index.tsx"></script>
+    <div id="root"></div>
+    <div id="demo"></div>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
 ```
@@ -544,4 +625,35 @@ Run web server for development:
 
 ```typescript
 npm start
+```
+
+정적 파일을 관리하기 위한 모듈 설치
+
+```typescript
+npm install -D parcel-reporter-static-files-copy
+```
+
+.parcelrc 파일 생성 및 설정 추가
+
+```typescript
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+static 폴더 생성 및 하위 폴더 images 생성
+
+## ESLint 설정
+
+.vscode 폴더 생성, setting.json 하위 파일 생성 및 설정
+
+```typescript
+{
+  "editor.rulers": [80],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "trailing-spaces.trimOnSave": true
+}
 ```
