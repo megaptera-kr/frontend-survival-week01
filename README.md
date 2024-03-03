@@ -184,6 +184,7 @@ dist
 
 ```typescript
 npm install --save-dev eslint
+npm install @typescript-eslint/parser@latest --save-dev
 npx eslint --init
 ```
 
