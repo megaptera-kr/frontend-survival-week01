@@ -34,11 +34,15 @@ jsx를 사용하기 위해 tsconfig.json 파일에서 옵션 수정
 typescript 컴파일을 통해 문법 오류를 확인하는 check 명령을 package.json 파일에 추가
 
 ```typescript
-{
   "scripts": {
-    "check": "tsc --noEmit"
-  }
-}
+    "start": "parcel --port 3000",
+    "build": "parcel build",
+    "check": "tsc --noEmit",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "test": "jest",
+    "coverage": "jest --coverage --coverage-reporters html",
+    "watch:test": "jest --watchAll"
+  },
 ```
 
 ### .gitignore 파일 생성
@@ -256,20 +260,6 @@ module.exports = {
 };
 ```
 
-pacakge.json 파일에 lint 명령어 추가
-
-```typescript
-  "scripts": {
-    "start": "parcel --port 3000",
-    "build": "parcel build",
-    "check": "tsc --noEmit",
-    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-    "test": "jest",
-    "coverage": "jest --coverage --coverage-reporters html",
-    "watch:test": "jest --watchAll"
-  },
-```
-
 .eslintignore 파일 작성
 
 ```typescript
@@ -451,20 +441,44 @@ ReactDOM.render(<App />, container);
 ### Jest
 
 ```typescript
-npm install --save-dev jest ts-jest @types/jest \
-    @testing-library/react @testing-library/jest-dom \
-    jest-environment-jsdom
+npm i -D jest @types/jest @swc/core @swc/jest \
+  jest-environment-jsdom \
+  @testing-library/react @testing-library/jest-dom@5.16.4
 ```
 
-jest.config.js
+jest.config.js 파일 생성 후 설정 추가
 
 ```typescript
 module.exports = {
-  preset: 'ts-jest',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  transform: {
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            jsx: true,
+            decorators: true,
+          },
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
+        },
+      },
+    ],
+  },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
 };
+```
+
+jest-setup.js 파일 생성
+
+```typescript
+import '@testing-library/jest-dom';
 ```
 
 .eslintrc.js 설정 추가
@@ -483,6 +497,7 @@ src/App.test.tsx 파일 작성
 
 ```typescript
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import App from './App';
 
@@ -515,6 +530,14 @@ index.html 파일 작성
     <script type="module" src="./src/index.tsx"></script>
   </body>
 </html>
+```
+
+package.json source 추가
+
+```typescript
+// (...중략)
+  "source": "index.html",
+// (...중략)
 ```
 
 Run web server for development:
