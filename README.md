@@ -2,7 +2,7 @@
 
 프론트엔드 생존코스 1주차 과제
 
-# React + TypeScript + Parcel
+## React + TypeScript + Parcel
 
 ### npm 프로젝트 생성
 
