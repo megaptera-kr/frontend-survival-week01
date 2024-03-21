@@ -14,7 +14,7 @@ node는 LTS 버전으로 설치한다.
 npm init -y
 ```
 
-2. .gitignore 생성
+2. `.gitignore` 생성
 
 github에 올리지 말아야 할 리스트를 적어두는 파일이다. 아래 링크를 참조하여 node에 관련되어 올리지 말아야 할 목록들을 붙여넣자.
 
@@ -40,7 +40,7 @@ npm i -D typescript
 npx tsc --init
 ```
 
-3. tsconfig JSX 문법 허용
+3. `tsconfig` JSX 문법 허용
 
 React에서 JSX 문법을 사용할 것이므로, `"jsx": "react-jsx"` 항목을 설정한다.
 
@@ -79,10 +79,10 @@ JSX 문법에서는 lint를 제외해주자.
 // .eslintrc.js
 module.exports = {
     env: {
-		browser: true,
-		es2021: true,
-		jest: true,
-	},
+  browser: true,
+  es2021: true,
+  jest: true,
+ },
     extends: ['xo', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
     ...
 }
@@ -231,9 +231,9 @@ parcel로 서버 실행, 배포, ESLint 체크 및 typeScript 체크, Jest 테�
 ```json
 // package.json
 {
-	...
-	"source":"./index.html",
-	"scripts": {
+ ...
+ "source":"./index.html",
+ "scripts": {
       "start": "parcel --port 8080",
       "build": "parcel build",
       "check": "tsc --noEmit",
