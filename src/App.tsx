@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import Greeting from './components/Greeting';
 
 function App({name = 'World'}: {name?: string}) {
