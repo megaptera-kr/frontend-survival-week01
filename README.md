@@ -146,32 +146,32 @@ npm i -D jest @types/jest @swc/core @swc/jest \
 ```js
 // jest.config.js
 module.exports = {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    './jest.setup',
-  ],
-  transform: {
-    '^.+\\.(t|j)sx?$': ['@swc/jest', {
-      jsc: {
-        parser: {
-          syntax: 'typescript',
-          jsx: true,
-          decorators: true,
-        },
-        transform: {
-          react: {
-            runtime: 'automatic',
-          },
-        },
-      },
-    }],
-  },
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
-    '<rootDir>/dist/',
-  ],
+	testEnvironment: 'jsdom',
+	setupFilesAfterEnv: [
+		'@testing-library/jest-dom/extend-expect',
+	],
+	transform: {
+		'^.+\\.(t|j)sx?$': ['@swc/jest', {
+			jsc: {
+				parser: {
+					syntax: 'typescript',
+					jsx: true,
+					decorators: true,
+				},
+				transform: {
+					react: {
+						runtime: 'automatic',
+					},
+				},
+			},
+		}],
+	},
+	testPathIgnorePatterns: [
+		'<rootDir>/node_modules/',
+		'<rootDir>/dist/',
+	],
 };
+
 ```
 
 `@testing-library/jest-dom` 6.0.0 버전부터 변경된 내용이 있습니다.
