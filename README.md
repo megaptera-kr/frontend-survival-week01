@@ -141,6 +141,11 @@ npm i -D jest @types/jest @swc/core @swc/jest \
     @testing-library/react @testing-library/jest-dom@5.16.4
 ```
 
+> `@types/jest` 는 DefinitelyTyped를 포함하고 있다.
+> `@swc/core`, `@swc/jest` 는 Jest 테스트를 더 빠르게 실행해주는 라이브러리이다.
+> `jest-environment-jsdom` 는 브라우저에 있는 것처럼 DOM을 시뮬레이션하여 테스트를 도와준다.
+> `@testing-library/react`, `@testing-library/jest-dom`는 리액트 컴포넌트와 작용하기 위한 API를 추가해주는 DOM 테스팅 라이브러리이다.
+
 2. `jest.config.js` 파일 추가
 
 ```js
